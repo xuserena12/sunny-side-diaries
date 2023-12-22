@@ -1,0 +1,31 @@
+
+:root {
+    --brown: #4f2d2d;
+    --mellow: #FFF4B5;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.navbar-link {
+    text-decoration: none;
+    color: var(--brown);
+    padding: 10px;
+    font-size: 1.5rem;
+    border: 2px solid transparent; 
+}
+
+.navbar-link:hover {
+    background-color: var(--mellow);
+    padding: 10px;
+    border-radius: 20px;
+    border: 2px solid var(--brown); 
+}
+
+
+
