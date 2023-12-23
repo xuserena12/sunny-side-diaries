@@ -11,6 +11,9 @@ const Navbar = () => {
           <li>
             <Link to="/history" className="navbar-link">History</Link>
           </li>
+          <li>
+            <Link to="/egg" className="navbar-link">Egg</Link>
+          </li>
           <li className="navbar-link"> Log Out</li>
         </ul>
       </div>

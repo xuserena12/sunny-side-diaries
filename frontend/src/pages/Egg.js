@@ -1,9 +1,9 @@
-const History = () => {
+const Egg = () => {
   return (
     <div className="pt-16 bg-main bg-cover w-screen h-screen">
-      History page goes here!
+      choose your egg page
     </div>
   );
 }
 
-export default History;
+export default Egg;
