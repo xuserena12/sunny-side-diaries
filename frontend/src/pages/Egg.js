@@ -8,15 +8,15 @@ const Egg = () => {
     <div className="pt-16 bg-chooseEgg bg-cover w-screen h-screen">
       <div className="oval"></div>      
         <div className = "tamago-container">
-          <h1>Tamago</h1>
+          <div class="name">Tamago</div>
           <img src={tamagoPic} alt="tamago"></img>
         </div>
         <div className = "jimmy-container">
-          <h1>Jimmy</h1>
+          <div class="name">Jimmy</div>
           <img src={jimPic} alt="jim"></img>
         </div>
         <div className = "sunny-container">
-          <h1>Sunny</h1>
+          <div class="name">Sunny</div>
           <img src={sunnyPic} alt="sunny"></img>
         </div>
         <div className="EggText">Choose Your Egg</div>
