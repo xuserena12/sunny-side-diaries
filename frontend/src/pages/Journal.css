@@ -1,0 +1,30 @@
+:root {
+  --brown: #4f2d2d;
+  --mellow: #FFF4B5;
+  --cream: #FFFDF8;
+}
+
+.outer-journal {
+  background-color: var(--mellow);
+  display: inline-block;
+  width: 900px;
+  height: 600px;
+  border-radius: 25px;
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;  
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner-journal {
+  background-color: var(--cream);
+  width: 860px;
+  height: 560px;
+  border-radius: 25px;
+  border: 3px solid var(--brown);
+}
