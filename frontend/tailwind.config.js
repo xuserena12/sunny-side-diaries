@@ -7,6 +7,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         main: "url('/src/assets/images/kitchen.png')",
+        chooseEgg: "url('/src/assets/images/choose_egg.png')",
       },
       colors : {
         yellow: "#FFF7CB",

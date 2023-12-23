@@ -1,0 +1,66 @@
+:root {
+    --brown: #4f2d2d;
+    --mellow: #FFF4B5;
+}
+
+.EggText {
+    height: 50%;
+    rotate: -30deg;
+    position: absolute;
+    width: 35%;
+    font-size: 7rem;
+    font-weight: 10000;
+    color: var(--mellow);
+    margin-top: 2%;
+    margin-left: 2%;
+    -webkit-text-stroke: 2px var(--brown);
+    text-shadow: -4px 5px 0 var(--brown), 
+    1px 1px 0 var(--brown), 
+   1px -1px 0 var(--brown), 
+  -1px -1px 0 var(--brown);
+    z-index: 2;
+}
+
+.oval {
+    height: 60%;
+    rotate: -30deg;
+    position: absolute;
+    width: 40%;
+    top: 4%;
+    background-color: white;
+    border-radius: 50%;
+    z-index: 1; 
+    border: 3px solid var(--brown);
+}
+
+.tamago-container {
+    justify-content: center;
+    margin-left: 34%;
+    top: 45%;
+    align-items: center;
+    position: absolute;
+    z-index: 4;
+  }
+
+  .jimmy-container {
+    justify-content: center;
+    margin-left: 60%;
+    top: 25%;
+    align-items: center;
+    position: absolute;
+    z-index: 4;
+  }
+
+  .sunny-container {
+    justify-content: center;
+    margin-left: 55%;
+    top: 65%;
+    align-items: center;
+    position: absolute;
+    z-index: 4;
+  }
+
+  img {
+    filter: drop-shadow(20px -20px 2px rgba(55, 66, 70, 0.4));
+  }
+
