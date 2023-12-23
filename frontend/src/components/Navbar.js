@@ -6,10 +6,10 @@ const Navbar = () => {
       <div className="flex justify-end p-4">
         <ul className="flex gap-8 items-center">
           <li>
-            <Link to="/" className="navbar-link">Home</Link>
+            <Link to="/" className="navbar-link">Journal</Link>
           </li>
           <li>
-            <Link to="/myjournal" className="navbar-link">My Journal</Link>
+            <Link to="/history" className="navbar-link">History</Link>
           </li>
           <li className="navbar-link"> Log Out</li>
         </ul>
