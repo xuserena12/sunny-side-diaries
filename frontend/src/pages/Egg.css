@@ -63,16 +63,19 @@
   .sunny-container:hover {
     animation: MoveUpDown 2.5s linear infinite;
     filter: brightness(100%);
+    cursor: pointer;
   }
 
   .jimmy-container:hover {
     animation: MoveUpDown 2.5s linear infinite;
     filter: brightness(100%);
+    cursor: pointer;
   }
 
   .tamago-container:hover {
     animation: MoveUpDown 2.5s linear infinite;
     filter: brightness(100%);
+    cursor: pointer;
   }
 
   @keyframes MoveUpDown {
@@ -88,9 +91,30 @@
     filter: drop-shadow(20px -20px 2px rgba(55, 66, 70, 0.4));
   }
 
-  h1 {
+  .name {
+    display: none;
     font-size: 40px;
     color: var(--mellow);
     -webkit-text-stroke: 2px var(--brown);
     filter: brightness(100%);
+  }
+
+  .tamago-container:hover .name{
+    animation: fadeIn 3s;
+    display: block;
+  }
+
+  .sunny-container:hover .name{
+    animation: fadeIn 3s;
+    display: block;
+  }
+
+  .jimmy-container:hover .name{
+    animation: fadeIn 0.1s;
+    display: block;
+  }
+
+  @keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
   }

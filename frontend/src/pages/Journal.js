@@ -11,6 +11,7 @@ const Journal = () => {
               placeholder="Write your thoughts here..."
             />
           </div>
+          <div className="button">Save</div>
         </div>
       </div>
     </div>
