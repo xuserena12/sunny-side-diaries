@@ -7,7 +7,7 @@ const Journal = () => {
         <div className="inner-journal">
           <div className="content-wrapper ml-4 mt-4">
             <textarea
-              className="w-full h-full outline-none resize-none"
+              className="w-full h-full outline-none resize-none bg-cream"
               placeholder="Write your thoughts here..."
             />
           </div>
