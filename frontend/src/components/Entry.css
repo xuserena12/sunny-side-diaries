@@ -1,0 +1,15 @@
+:root {
+  --cream: #FFFDF8;
+}
+.outer-entry {
+  display: flex;
+  justify-content: center;
+}
+
+.entry {
+  background-color: var(--cream);
+  width: 1050px;
+  height: 100px;
+  margin-top: 20px;
+  border-radius: 15px;
+}

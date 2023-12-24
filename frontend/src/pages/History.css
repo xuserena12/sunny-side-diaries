@@ -1,0 +1,15 @@
+:root {
+  --brown: #4f2d2d;
+  --mellow: #FFF4B5;
+}
+
+.outer-box {
+  background-color: var(--mellow);
+  display: block;
+  width: 1100px;
+  height: 600px;
+  border-radius: 25px;  
+  margin: auto;
+  overflow: auto;
+}
+

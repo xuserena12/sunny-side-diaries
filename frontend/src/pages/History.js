@@ -1,7 +1,19 @@
+import './History.css';
+import Entry from '../components/Entry';
+
 const History = () => {
   return (
-    <div className="pt-16 bg-main bg-cover w-screen h-screen">
-      History page goes here!
+    <div className="bg-main bg-cover h-screen w-screen flex justify-center items-center">
+      <div className="outer-box">
+      <Entry/>
+      <Entry/>
+      <Entry/>
+      <Entry/>
+      <Entry/>
+      <Entry/>
+      <Entry/>
+      <Entry/>
+      </div>
     </div>
   );
 }
