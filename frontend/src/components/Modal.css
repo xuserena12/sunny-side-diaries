@@ -1,0 +1,67 @@
+:root {
+    --brown: #4f2d2d;
+    --mellow: #FFF4B5;
+    --green: #21c589; 
+}
+
+.modal-content {
+    background-color: var(--mellow);
+    height: 200px;
+    width: 400px;
+    top: -100px;
+    border-radius: 50px;
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+    border: 5px solid var(--brown);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: block;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal-content:hover {
+    cursor: pointer;
+}
+
+h2 {
+    color: var(--brown);
+    font-size: 20px;
+    padding: 10px;
+}
+
+.modal-content textarea {
+    border-radius: 10px;
+    border: 3px solid var(--brown);
+    padding: 10px;
+    height: 30%;
+    width: 80%;
+    text-align: center;
+    color:var(--brown);
+    font-size: 20px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.button-container button {
+    flex: 1; /* Use flex to distribute space equally */
+    box-sizing: border-box;
+    padding: 5px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 16px;
+}
+
+
+  
+
