@@ -10,9 +10,9 @@ const Modal = ({ toggleModal }) => {
       <div className="overlay"></div>
       <div className="modal-content">
         <h2>Enter Entry Name</h2>
-        <textarea maxlength="30"></textarea>
-        <div className="button-container">
-            <button>Done</button>
+        <input type="text" maxLength="30" placeholder="Title"></input>
+        <div  className="button-container">
+            <button type="submit" onClick={toggleModal}>Done</button>
         </div>
         </div>
       </div>
