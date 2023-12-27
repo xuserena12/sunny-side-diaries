@@ -60,6 +60,11 @@ h2 {
     cursor: pointer;
     color: #fff;
     font-size: 16px;
+    background-color: var(--green);
+}
+
+.button-container:hover button {
+    background-color: var(--green);
 }
 
 
