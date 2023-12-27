@@ -5,14 +5,14 @@ import axios from 'axios';
 
 
 const History = () => {
-  const [data, setData] = useState([]);
+  const [entries, setEntries] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get('http://localhost:8000/history/');
         console.log(response.data);
-        setData(response.data);
+        setEntries(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -25,14 +25,14 @@ const History = () => {
   return (
     <div className="bg-main bg-cover h-screen w-screen flex justify-center items-center">
       <div className="outer-box">
-      <Entry/>
-      <Entry/>
-      <Entry/>
-      <Entry/>
-      <Entry/>
-      <Entry/>
-      <Entry/>
-      <Entry/>
+        {entries.map((entry, index) => (
+          <Entry
+            key={index}
+            date={entry.date}
+            title={entry.title}
+            content={entry.content}
+          />
+        ))}
       </div>
     </div>
   );
