@@ -1,25 +1,25 @@
 import './History.css';
 import Entry from '../components/Entry';
 import { useEffect, useState } from 'react';
-// import axios from 'axios';
+import axios from 'axios';
 
 
 const History = () => {
   const [entries, setEntries] = useState([]);
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await axios.get('http://localhost:8000/history/');
-  //       console.log(response.data);
-  //       setEntries(response.data);
-  //     } catch (error) {
-  //       console.error('Error fetching data:', error);
-  //     }
-  //   };
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('/history');
+        console.log(response.data);
+        setEntries(response.data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
 
-  //   fetchData();
-  // }, []);
+    fetchData();
+  }, []);
 
 
   return (
