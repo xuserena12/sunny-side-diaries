@@ -1,0 +1,11 @@
+.btn-primary {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    top: 15%;
+    left: 0;
+    width: 80px;
+    height: 40px;
+    cursor: pointer;
+}
