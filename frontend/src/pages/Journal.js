@@ -5,9 +5,21 @@ import Modal from "../components/Modal";
 
 const Journal = () => {
   const [modalVisible, setModalVisible] = useState(false);
+  const [content, setContent] = useState("");
+  const [title, setTitle] = useState("");
+  
 
   const toggleModal = () => {
     setModalVisible(!modalVisible);
+  };
+
+  const handleChange = (e) => {
+    setContent(e.target.value);
+    console.log(content);
+  };
+
+  const handleSave = (e) => {
+    e.preventDefault();
   };
 
   return (
@@ -17,10 +29,13 @@ const Journal = () => {
           <div className="content-wrapper ml-4 mt-4">
             <input disabled={modalVisible}
               className="w-full h-full outline-none bg-cream resize-none"
-              placeholder="Write your thoughts here..."/>
+              placeholder="Write your thoughts here..."
+              value={content}
+              onChange={handleChange}
+              />
           </div>
           <button onClick={toggleModal} disabled={modalVisible}>Save</button>
-          {modalVisible && <Modal toggleModal={toggleModal} />}
+          {modalVisible && <Modal toggleModal={toggleModal} content={content} />}
         </div>
       </div>
     </div>
