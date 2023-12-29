@@ -1,12 +1,11 @@
 // Journal.js
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./Journal.css";
 import Modal from "../components/Modal";
 
 const Journal = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const [content, setContent] = useState("");
-  const [title, setTitle] = useState("");
   
 
   const toggleModal = () => {

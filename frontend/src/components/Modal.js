@@ -4,7 +4,6 @@ import "./Modal.css";
 import axios from 'axios';
 
 const Modal = ({ toggleModal, content }) => {
-  const [modal, setModal] = useState(false);
   const [title, setTitle] = useState("");
 
   const handleSave = async (e) => {
