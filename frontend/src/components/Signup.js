@@ -1,76 +1,45 @@
 import React, { useState } from 'react';
+import axios from "axios";
 import './Sign.css';
-
+import { Link, useNavigate } from "react-router-dom";
 
 const Signup = () => {
-    const [fname, setFname] = useState();
-    const [lname, setLname] = useState();
-    const [email, setEmail] = useState();
-    const [password, setPassword] = useState(); 
+    const [data, setData] = useState({
+        fname: "",
+        lname: "",
+        email: "",
+        password: "",
+    });
+    const isValidPassword = data.password.length >= 6;
+    const navigate = useNavigate();
     const [error, setError] = useState();
+    const [success, setSuccess] = useState();
 
-    const validateEmail = (value) => {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(value);
+    const handleChange = ({ currentTarget: input }) => {
+        setData({...data, [input.name]: input.value});
+        setError('');
     };
 
-    /*const handleChange = ({ currentTarget: input }) => {
-        setData({...data, [input.name]: input.value});
-    };*/
-
-    const handleSubmit = e => {
-        e.preventDefault();
-
-        if (!fname) {
-            setError('First name must be at least one character');
-            return;
-        }
-        if (!lname) {
-            setError('Last name must be at least one character');
-            return;
-        }
-        if (!validateEmail(email)) {
-            setError('Invalid Email');
-            return;
-        }
-        if (password.length < 6) {
+    const handleSubmit = async(e) => {
+        e.preventDefault();  
+        if (!isValidPassword) {
             setError('Password must be at least 6 characters');
             return;
         }
-
-        console.log(fname, lname, email, password);
-        fetch("http://localhost:4000/register", {
-          method: "POST",
-          crossDomain: true,
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-            "Access-Control-Allow-Origin": "*",
-          },
-          body: JSON.stringify({
-            fname,
-            email,
-            lname,
-            password,
-          }),
-        })
-        .then((res) => {
-            if (!res.ok) {
-              return res.json().then((error) => {
-                setError(error.error || 'An error occurred during registration.');
-              });
+        try {
+            const url = "http://localhost:4000/register";
+            const { data: res } = await axios.post(url, data);
+            setSuccess(res.message);
+            console.log(res.message);
+            navigate('/signin');
+        } catch (error) {
+            if (
+                error.response &&
+                error.response.status >= 400 && error.response.status <= 500
+            ) {
+                setError(error.response.data.message);
             }
-            return res.json();
-          })
-          .then((data) => {
-            console.log('User registered successfully:', data);
-            // Add further logic as needed
-          })
-          .catch((error) => {
-            console.error('Error during registration:', error);
-            setError('An error occurred during registration.');
-          });
-          setError('');
+        }
     };
 
     return (
@@ -78,58 +47,50 @@ const Signup = () => {
             <h3>Sign Up</h3>
             <div className="fillbox">
                 <label>First Name</label>
-                <input 
-                                    type="text" 
-                                    className="form-control" 
-                                    placeholder="First Name"
-                                    required
-                                    onChange={(e)=> {
-                                        setFname(e.target.value);
-                                        setError('');
-                                    }}
-                    /*type="text"
+                <input
+                    type="text"
                     placeholder="First Name"
                     name='fname'
                     onChange={handleChange}
                     value = {data.fname}
-    className="form-control"*/
+                    required
+                    className="form-control"
                 />
             </div>
             <div className="fillbox">
                 <label>Last Name</label>
                 <input 
-                    type="text" 
-                    className="form-control" 
+                    type="text"
                     placeholder="Last Name"
+                    name='lname'
+                    onChange={handleChange}
+                    value = {data.lname}
                     required
-                    onChange={(e)=> {
-                        setLname(e.target.value);
-                        setError('');
-                    }}/>
+                    className="form-control"/>
             </div>
             <div className="fillbox">
                 <label>Email Address</label>
                 <input 
-                    type="email" 
-                    className="form-control" 
-                    placeholder="Enter Email Address"
+                    type="email"
+                    placeholder="Enter Email"
+                    name='email'
+                    onChange={handleChange}
+                    value = {data.email}
                     required
-                    onChange={(e)=> {
-                        setEmail(e.target.value);
-                        setError('');
-                        }}/>
+                    className="form-control"
+                />
             </div>
             <div className="fillbox">
                 <label>Password</label>
                 <input 
-                    type="password" 
-                    className="form-control" 
+                    type="password"
                     placeholder="Enter Password"
+                    name='password'
+                    onChange={handleChange}
+                    value = {data.password}
                     required
-                    onChange={(e)=> {
-                        setPassword(e.target.value);
-                        setError('');
-                    }}/>
+                    className="form-control"
+                />
             </div>
             <div className="d-grid">
                 <button type="submit" className="btn btn-primary">
@@ -139,6 +100,7 @@ const Signup = () => {
             <p className="forgot-password">
           Already registered <a className="underline" href="/signin">sign in?</a>
             </p>
+            {success && <p className="success-message">{success}</p>}
             {error && <p className="error-message">{error}</p>}
         </form>
     )
