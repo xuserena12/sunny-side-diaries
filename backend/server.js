@@ -10,6 +10,9 @@ app.use('/', indexRouter);
 const cors = require("cors");
 app.use(cors());
 
+const bcrypt=require("bcrypt");
+
+
 // Set up mongoose connection
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
@@ -38,15 +41,23 @@ require("./userDetails")
 const User=mongoose.model("UserInfo");
 app.post("/register", async(req, res) => {
   const {fname, lname, email, password}=req.body;
+  const salt = await bcrypt.genSalt(Number(process.env.SALT));
+  const encryptedPass=await bcrypt.hash(password, salt);
   try {
+    const oldUser= await User.findOne({ email });
+    if (oldUser) {
+       console.log("hi");
+       return res.status(409).send({message: "User with given email already exists"});
+    }
     await User.create({
       fname,
       lname,
       email,
-      password,
+      password:encryptedPass,
     });
-    res.send({status: "ok"});
+    res.status(201).send({message: "User created successfully"});
   } catch (error) {
-    res.send({ status: "error"});
+    res.status(201).send({message: "Internal Server Error"});
   }
 });
+
