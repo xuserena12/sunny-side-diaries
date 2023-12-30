@@ -23,7 +23,7 @@ const Signup = () => {
     const handleSubmit = async(e) => {
         e.preventDefault();  
         if (!isValidPassword) {
-            setError('Password must be at least 6 characters');
+            setError('Passwords must be at least 6 characters');
             return;
         }
         try {
@@ -89,16 +89,16 @@ const Signup = () => {
                     className="form-control"
                 />
             </div>
+            {success && <p className="success-message">{success}</p>}
+            {error && <p className="error-message">{error}</p>}
             <div className="d-grid">
                 <button type="submit" className="btn btn-primary">
                     Sign Up
                 </button>
             </div>
-            <p className="forgot-password">
+            <p className="already-registered">
           Already registered <a className="underline" href="/signin">sign in?</a>
             </p>
-            {success && <p className="success-message">{success}</p>}
-            {error && <p className="error-message">{error}</p>}
             </div>
         </form>
     )

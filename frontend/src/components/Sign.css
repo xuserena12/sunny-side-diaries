@@ -1,4 +1,5 @@
 @import url('../Colours.css');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 .overall .btn-primary {
     background-color: var(--mellow);
@@ -47,10 +48,6 @@ label {
     text-align: center;
 }
 
-.overall .error-message {
-    color: red;
-}
-
 .fillbox {
     padding: 10px 0px;
     color: var(--brown);
@@ -61,6 +58,9 @@ label {
     border-radius: 10px;
     width: 80%;
     background-color: var(--cream);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: var(--brown);
 }
 
 .overall .forgot-password {
@@ -69,6 +69,22 @@ label {
     margin-top: 10%;
 }
 
+.already-registered {
+    padding: 10px;
+}
+
 p {
     color: var(--brown);
+}
+
+.error-message {
+    color: rgb(180, 59, 59);
+    background-color: rgb(251, 181, 181);
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px;
+    width: 80%;
+    display: inline-block;
+    border: 1px solid rgb(180, 59, 59);
+    font-family: 'Roboto', sans-serif;
 }
