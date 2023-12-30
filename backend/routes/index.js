@@ -8,4 +8,6 @@ router.get('/history', entry_controller.entries_list);
 
 router.post('/journal', entry_controller.entries_create_post);
 
+router.get('/history/:id', entry_controller.entry_detail);
+
 module.exports = router;
