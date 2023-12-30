@@ -7,7 +7,7 @@ const Navbar = () => {
       <div className="flex justify-end p-4">
         <ul className="flex gap-8 items-center">
           <li>
-            <Link to="/" className="navbar-link">Journal</Link>
+            <Link to="/journal" className="navbar-link">Journal</Link>
           </li>
           <li>
             <Link to="/history" className="navbar-link">History</Link>

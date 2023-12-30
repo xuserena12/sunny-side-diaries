@@ -26,10 +26,14 @@ const Modal = ({ toggleModal, content }) => {
   };
 
   const handleChange = (e) => {
-    console.log("changed!");
     setTitle(e.target.value);
     console.log(title);
   };
+
+  const submitEntry = () => {
+    handleSave();
+    toggleModal();
+  }
 
   return (
     <div className="modal">
@@ -44,8 +48,8 @@ const Modal = ({ toggleModal, content }) => {
         onChange={handleChange}
         >
         </input>
-        <div  className="button-container">
-            <button type="submit" onClick={toggleModal && handleSave}>Done</button>
+        <div className="button-container">
+            <button type="submit" onClick={submitEntry}>Done</button>
         </div>
         </div>
       </div>
