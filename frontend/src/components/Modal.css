@@ -1,8 +1,4 @@
-:root {
-    --brown: #4f2d2d;
-    --mellow: #FFF4B5;
-    --green: #21c589; 
-}
+@import url('../Colours.css');
 
 .modal-content {
     background-color: var(--mellow);

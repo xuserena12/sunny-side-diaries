@@ -43,10 +43,10 @@ const Signup = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="bg-main bg-cover h-screen w-screen justify-center items-center">
+        <form onSubmit={handleSubmit} className="bg-main background">
+            <div className='overall'>
             <h3>Sign Up</h3>
             <div className="fillbox">
-                <label>First Name</label>
                 <input
                     type="text"
                     placeholder="First Name"
@@ -58,7 +58,6 @@ const Signup = () => {
                 />
             </div>
             <div className="fillbox">
-                <label>Last Name</label>
                 <input 
                     type="text"
                     placeholder="Last Name"
@@ -69,10 +68,9 @@ const Signup = () => {
                     className="form-control"/>
             </div>
             <div className="fillbox">
-                <label>Email Address</label>
                 <input 
                     type="email"
-                    placeholder="Enter Email"
+                    placeholder="Email"
                     name='email'
                     onChange={handleChange}
                     value = {data.email}
@@ -81,10 +79,9 @@ const Signup = () => {
                 />
             </div>
             <div className="fillbox">
-                <label>Password</label>
                 <input 
                     type="password"
-                    placeholder="Enter Password"
+                    placeholder="Password"
                     name='password'
                     onChange={handleChange}
                     value = {data.password}
@@ -102,6 +99,7 @@ const Signup = () => {
             </p>
             {success && <p className="success-message">{success}</p>}
             {error && <p className="error-message">{error}</p>}
+            </div>
         </form>
     )
 }

@@ -1,8 +1,4 @@
-
-:root {
-    --brown: #4f2d2d;
-    --mellow: #FFF4B5;
-}
+@import url('../Colours.css');
 
 nav {
     position: fixed;

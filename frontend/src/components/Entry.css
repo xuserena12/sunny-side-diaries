@@ -1,6 +1,5 @@
-:root {
-  --cream: #FFFDF8;
-}
+@import url('../Colours.css');
+
 .outer-entry {
   display: flex;
   justify-content: center;
