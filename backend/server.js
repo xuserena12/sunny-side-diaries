@@ -16,7 +16,7 @@ const bcrypt=require("bcrypt");
 // Set up mongoose connection
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
-const mongoDB = "mongodb+srv://journal2:1EEMfhIpoNz0xAv6@cluster0.ysx3vbt.mongodb.net/entries?retryWrites=true&w=majority";
+const mongoDB = process.env.MONGOURL;
 
 main().catch((err) => console.log(err));
 async function main() {
