@@ -1,5 +1,5 @@
 @import url('../Colours.css');
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Blinker:wght@200&display=swap');
 
 .overall .btn-primary {
     background-color: var(--mellow);
@@ -25,10 +25,6 @@ h3 {
     color: var(--brown);
     font-size: 50px;
     text-align: center;
-}
-
-label {
-    color: var(--brown);
 }
 
 .background {
@@ -58,9 +54,9 @@ label {
     border-radius: 10px;
     width: 80%;
     background-color: var(--cream);
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
     color: var(--brown);
+    font-family: 'Blinker', sans-serif;
+    font-weight:800;
 }
 
 .overall .forgot-password {
@@ -86,5 +82,10 @@ p {
     width: 80%;
     display: inline-block;
     border: 1px solid rgb(180, 59, 59);
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Blinker', sans-serif;
+    font-weight:800;
+}
+
+input::placeholder {
+    color: #C0AEAE;
 }
