@@ -31,8 +31,8 @@ const Modal = ({ toggleModal, content }) => {
   };
 
   const submitEntry = () => {
-    handleSave();
     toggleModal();
+    handleSave();
   }
 
   return (

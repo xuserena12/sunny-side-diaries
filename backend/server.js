@@ -73,11 +73,11 @@ app.post("/login", async(req, res) => {
     if (await bcrypt.compare(password, user.password)) {
       const token = jwt.sign({email: user.email}, JWT_SECRET, {expiresIn: "15m"});
       res.status(200).send({data:token, message: "Logged in successfully"})
+    } else {
+      return res.status(401).send({message: "Invalid Email or Password"});
     }
-    return res.status(401).send({message: "Invalid Email or Password"});
   }
   catch(error) {
     return res.status(500).send({message:"Internal Server Error"});
   }
-
 })
