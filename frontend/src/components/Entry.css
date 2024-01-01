@@ -8,13 +8,48 @@
 .entry {
   background-color: var(--cream);
   width: 1050px;
-  height: 100px;
+  height: 125px;
+  margin-left: 15px;
   margin-top: 20px;
   border-radius: 15px;
   cursor: pointer;
   transition: background-color 0.3s ease, box-shadow 0.3s ease; 
+  border: 2px solid var(--brown);
 }
 
 .entry:hover {
-  box-shadow: 2px 2px 8px rgba(248, 158, 174, 0.5);
+  box-shadow: 6px 6px 12px rgba(248, 158, 174, 0.5);
+}
+
+.display {
+  display: flex;
+}
+
+.date {
+  text-align: center;
+  font-family: 'Manrope', sans-serif;
+  font-weight: bold;
+  color: #545556;
+  margin: 0;
+  padding: 0;
+  margin-left: 20px;
+  margin-top: 12px;
+
+}
+
+.month {
+  font-size: 24px;
+}
+
+.date {
+  font-size: 40px;
+}
+
+.content {
+  font-size: 16px;
+  font-family: 'Manrope', sans-serif;
+  font-weight: bold;
+  margin-left: 18px;
+  margin-top: 12px;
+  color: #545556;
 }

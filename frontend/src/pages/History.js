@@ -33,6 +33,7 @@ const History = () => {
   return (
     <div className="bg-main bg-cover h-screen w-screen flex justify-center items-center">
       <div className="outer-box pb-5">
+      <p className="title">My Journal</p>
         {entries.map((entry, index) => (
           <Entry
             key={index}

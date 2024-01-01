@@ -1,8 +1,5 @@
-:root {
-  --brown: #4f2d2d;
-  --mellow: #FFF4B5;
-  --cream: #FFFDF8;
-}
+@import url('../Colours.css');
+
 
 .outer-journal {
   background-color: var(--mellow);

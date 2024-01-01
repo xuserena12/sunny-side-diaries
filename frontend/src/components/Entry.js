@@ -9,7 +9,7 @@ const Entry = ({ date, title, content }) => {
   ];
   const dateFiltered = {
     month: monthNames[yourDate.getMonth()],
-    day: yourDate.getDay(),
+    day: yourDate.getDate(),
     year: yourDate.getFullYear()
   }
 
@@ -18,9 +18,16 @@ const Entry = ({ date, title, content }) => {
       <div
       className="entry"
       >
-        <p>{dateFiltered.month}</p>
-        <p>{title}</p>
-        <p>{content}</p>
+        <div className="display">
+          <div className="date">
+            <div className="month">{dateFiltered.month}</div>
+            <div className="day">{dateFiltered.day}</div>
+          </div>
+
+        <div>
+          <p className="content">{content}</p>
+        </div>
+        </div>
       </div>
     </div>
   );

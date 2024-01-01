@@ -1,7 +1,5 @@
-:root {
-  --brown: #4f2d2d;
-  --mellow: #FFF4B5;
-}
+@import url('../Colours.css');
+
 
 .outer-box {
   background-color: var(--mellow);
@@ -13,3 +11,11 @@
   overflow: auto;
 }
 
+.title {
+  font-size: 32px;
+  color: var(--brown);
+  margin-left: 34px;
+  margin-top: 24px;
+  font-weight: semi-bold;
+
+}
