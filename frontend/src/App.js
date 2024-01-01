@@ -4,8 +4,8 @@ import Navbar from './components/Navbar';
 import Journal from './pages/Journal';
 import History from './pages/History';
 import Egg from './pages/Egg';
-import Signup from './components/Signup';
-import Signin from './components/Signin';
+import Signup from './pages/Signup';
+import Signin from './pages/Signin';
 
 function App() {
   const location = useLocation();

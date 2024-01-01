@@ -14,7 +14,11 @@ const EntrySchema = new Schema({
   date: {
     type: Date,
     required: true,
-  }
+  },
+  userId: {
+    type: String,
+    required: true,
+  },
 });
 
 EntrySchema.virtual("url").get(function () {

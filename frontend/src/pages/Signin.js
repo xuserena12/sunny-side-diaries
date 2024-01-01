@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from "axios";
 import './Sign.css';
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Signin = () => {
     const [data, setData] = useState({
@@ -23,6 +23,7 @@ const Signin = () => {
             const url = "http://localhost:4000/login";
             const { data: res } = await axios.post(url, data);
             localStorage.setItem("token", res.data);
+            localStorage.setItem("userId", res.id);
             // window.location = "/";
             setSuccess(res.message);
             console.log(res.message);

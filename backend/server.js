@@ -36,7 +36,7 @@ app.listen(process.env.PORT, () => {
   console.log("Listening on port", process.env.PORT);
 });
 
-require("./userDetails")
+require("./models/userDetails")
 const User=mongoose.model("UserInfo");
 // sign up API
 app.post("/register", async(req, res) => {
@@ -71,8 +71,9 @@ app.post("/login", async(req, res) => {
       return res.status(401).send({message: "Invalid Email or Password"});
     }
     if (await bcrypt.compare(password, user.password)) {
-      const token = jwt.sign({email: user.email}, JWT_SECRET, {expiresIn: "15m"});
-      res.status(200).send({data:token, message: "Logged in successfully"})
+      const token = jwt.sign({ id: user._id, email: user.email }, JWT_SECRET, {expiresIn: "15m"});
+      res.status(200).json({data:token, id: user._id, message: "Logged in successfully"});
+      
     } else {
       return res.status(401).send({message: "Invalid Email or Password"});
     }
@@ -80,4 +81,5 @@ app.post("/login", async(req, res) => {
   catch(error) {
     return res.status(500).send({message:"Internal Server Error"});
   }
-})
+});
+

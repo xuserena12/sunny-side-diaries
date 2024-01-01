@@ -6,11 +6,18 @@ import { Link } from 'react-router-dom';
 
 const History = () => {
   const [entries, setEntries] = useState([]);
+  const userId = localStorage.getItem('userId');
 
   useEffect(() => {
+    console.log("hi!");
+    // console.log(userId);
     const fetchData = async () => {
       try {
-        const response = await axios.get('/history');
+        const response = await axios.get('/history', {
+          params: {
+            userId: userId,
+          }
+        });
         console.log(response.data);
         setEntries(response.data);
       } catch (error) {
@@ -20,6 +27,7 @@ const History = () => {
 
     fetchData();
   }, []);
+
 
 
   return (

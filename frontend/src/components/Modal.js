@@ -4,6 +4,7 @@ import "./Modal.css";
 import axios from 'axios';
 
 const Modal = ({ toggleModal, content }) => {
+  const id = localStorage.getItem('userId');
   const [title, setTitle] = useState("");
 
   const handleSave = async (e) => {
@@ -11,7 +12,8 @@ const Modal = ({ toggleModal, content }) => {
     const entry = {
       title: title, 
       content: content,
-      date: currentDate
+      date: currentDate,
+      userId: id,
     };
 
     try {
