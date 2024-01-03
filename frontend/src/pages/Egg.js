@@ -11,13 +11,13 @@ const Egg = () => {
           <div class="name">Tamago</div>
           <img src={tamagoPic} alt="tamago"></img>
         </div>
-        <div className = "jimmy-container">
-          <div class="name">Jimmy</div>
-          <img src={jimPic} alt="jim"></img>
-        </div>
         <div className = "sunny-container">
           <div class="name">Sunny</div>
           <img src={sunnyPic} alt="sunny"></img>
+        </div>
+        <div className = "jimmy-container">
+          <div class="name">Jimmy</div>
+          <img src={jimPic} alt="jim"></img>
         </div>
         <div className="EggText">Choose Your Egg</div>
     </div>

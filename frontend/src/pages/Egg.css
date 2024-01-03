@@ -8,8 +8,7 @@
     font-size: 7rem;
     font-weight: 10000;
     color: var(--mellow);
-    margin-top: 2%;
-    margin-left: 2%;
+    margin-left: 5%;
     -webkit-text-stroke: 2px var(--brown);
     text-shadow: -4px 5px 0 var(--brown), 
     1px 1px 0 var(--brown), 
@@ -44,7 +43,7 @@
     top: 27%;
     align-items: center;
     position: absolute;
-    z-index: 4;
+    z-index: 5;
     filter: brightness(50%);
   }
 
@@ -70,7 +69,7 @@
   }
 
   .tamago-container:hover {
-    animation: MoveUpDown 2.5s linear infinite;
+    animation: MoveUpDown 2s linear infinite;
     filter: brightness(100%);
     cursor: pointer;
   }
@@ -109,9 +108,4 @@
   .jimmy-container:hover .name{
     animation: fadeIn 0.1s;
     display: block;
-  }
-
-  @keyframes fadeIn {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
   }
