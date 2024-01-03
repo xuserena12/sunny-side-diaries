@@ -1,8 +1,6 @@
-import './Colours.css';
-import './EmotionAnalysis.css';
 import axios from 'axios';
 import { useState } from 'react';
-const EmotionAnalysis = () => {
+const ChatBox = () => {
     const [prompt, setPrompt] = useState("");
     const [response, setResponse] = useState("");
     const handleSubmit = (e) => {
@@ -19,9 +17,11 @@ const EmotionAnalysis = () => {
         <div className="chat-box-outer">
             <form className="chat-box-inner" onSubmit={handleSubmit}></form>
             <div className="chat-options">
-                <button type="submit"></button>
-                <button type="submit"></button>
+                <button class="journal-prompt" type="submit">Generate a Journal Prompt</button>
+                <button class="journal-tip" type="submit">Journaling Tips</button>
             </div>
         </div>
     )
 }
+
+export default ChatBox;
