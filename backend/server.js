@@ -95,6 +95,8 @@ const openai = new OpenAI({
 
 app.use(bodyParser.json());
 
+
+
 app.post("/chat", async (req, res) => {
     try {
         const { prompt } = req.body;
@@ -114,7 +116,7 @@ app.post("/chat", async (req, res) => {
         console.log(completion.choices[0]);
 
         // Send the response text to the client
-        res.send(completion.choices[0].text);
+        res.status(201).json(completion.choices[0].message.content);
     } catch (error) {
         console.error("Error in /chat endpoint:", error.message);
         res.status(500).send("Internal Server Error");
