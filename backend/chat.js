@@ -5,31 +5,41 @@ const router = express.Router();
 require('dotenv').config();
 const bodyParser = require('body-parser');
 const OpenAI = require('openai');
+
 const openai = new OpenAI({
     apiKey: process.env.AI_API_KEY,
 });
-// const text2emotion = require('text2emotion');
 
 router.use(bodyParser.json());
-router.post("/chat", async(req, res) => {
-    const { prompt } = req.body;
 
-    // analyse the emotions here
-    // const { entry } = req.body;
-    // const emotions = text2emotion.getEmotion(entry);
+router.post("/chat", async (req, res) => {
+    try {
+        const { prompt } = req.body;
 
-    const completion = await openai.createCompletion({
-        model: "text-davinci-003", 
-        max_tokens: 512,
-        temperature:0,
-        prompt: prompt,
-    });
+        // Additional parameters for the API request
+        const apiRequestParams = {
+            messages: [{ role: "system", content: "You are a helpful assistant." }],
+            model: "gpt-3.5-turbo",
+            max_tokens: 512,
+            temperature: 0,
+            prompt: prompt,
+        };
 
-    res.send(completion.data.choices[0].text);
-})
+        // Make the API request
+        const completion = await openai.chat.completions.create(apiRequestParams);
+
+        // Log the response for debugging
+        console.log(completion.choices[0]);
+
+        // Send the response text to the client
+        res.send(completion.choices[0].text);
+    } catch (error) {
+        console.error("Error in /chat endpoint:", error.message);
+        res.status(500).send("Internal Server Error");
+    }
+});
 
 module.exports = router;
-
 
 
 
