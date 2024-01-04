@@ -1,11 +1,20 @@
 import axios from 'axios';
 import { useState } from 'react';
 const ChatBox = () => {
-    const [prompt, setPrompt] = useState("");
     const [response, setResponse] = useState("");
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        axios.post("http://localhost:4000/chat", { prompt })
+
+    const generateJournalPrompt = () => {
+        const prompt = "Generate me a journal prompt based on mental health";
+        handleClick(prompt);
+    };
+
+    const generateJournalTips = () => {
+        const prompt = "Generate me some journaling tips in less than 100 words";
+        handleClick(prompt);
+    };
+
+    const handleClick = async(prompt) => {
+        const res = await axios.post("/chat", { prompt })
         .then((res) => {
             setResponse(res.data);
         })
@@ -15,13 +24,16 @@ const ChatBox = () => {
     };
     return (
         <div className="chat-box-outer">
-            <form className="chat-box-inner" onSubmit={handleSubmit}></form>
             <div className="chat-options">
-                <button class="journal-prompt" type="submit">Generate a Journal Prompt</button>
-                <button class="journal-tip" type="submit">Journaling Tips</button>
+                <button className="journal-prompt" onClick={generateJournalPrompt}>Generate a Journal Prompt</button>
+                <button className="journal-tip" onClick={generateJournalTips}>Journaling Tips</button>
+            </div>
+            <div className="chat-box-inner">
+                <p>{ response }</p>
             </div>
         </div>
     )
 }
 
 export default ChatBox;
+
