@@ -3,12 +3,15 @@ require('dotenv').config();
 const app = express();
 
 const indexRouter = require('./routes/index');
-
-app.use(express.json())
-app.use('/', indexRouter);
+//const chatRouter = require('./chat');
 
 const cors = require("cors");
 app.use(cors());
+
+
+app.use(express.json())
+app.use('/', indexRouter);
+//app.use('/chat', chatRouter);
 
 const bcrypt = require("bcrypt");
 
@@ -81,5 +84,40 @@ app.post("/login", async(req, res) => {
   catch(error) {
     return res.status(500).send({message:"Internal Server Error"});
   }
+});
+
+const bodyParser = require('body-parser');
+const OpenAI = require('openai');
+
+const openai = new OpenAI({
+    apiKey: process.env.API_KEY,
+});
+
+app.use(bodyParser.json());
+
+app.post("/chat", async (req, res) => {
+    try {
+        const { prompt } = req.body;
+        const userMessage = { role: "user", content: prompt };
+        // Additional parameters for the API request
+        const apiRequestParams = {
+            messages: [{ role: "system", content: "You are a helpful assistant." }, userMessage],
+            model: "gpt-3.5-turbo",
+            max_tokens: 512,
+            temperature: 0.5,
+        };
+
+        // Make the API request
+        const completion = await openai.chat.completions.create(apiRequestParams);
+
+        // Log the response for debugging
+        console.log(completion.choices[0]);
+
+        // Send the response text to the client
+        res.send(completion.choices[0].text);
+    } catch (error) {
+        console.error("Error in /chat endpoint:", error.message);
+        res.status(500).send("Internal Server Error");
+    }
 });
 

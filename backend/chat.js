@@ -1,13 +1,13 @@
 #! /usr/bin/env node
 
-const express = require('express');
+/*const express = require('express');
 const router = express.Router();
 require('dotenv').config();
 const bodyParser = require('body-parser');
 const OpenAI = require('openai');
 
 const openai = new OpenAI({
-    apiKey: process.env.AI_API_KEY,
+    apiKey: process.env.API_KEY,
 });
 
 router.use(bodyParser.json());
@@ -15,10 +15,11 @@ router.use(bodyParser.json());
 router.post("/chat", async (req, res) => {
     try {
         const { prompt } = req.body;
+        const userMessage = { role: "user", content: prompt };
 
         // Additional parameters for the API request
         const apiRequestParams = {
-            messages: [{ role: "system", content: "You are a helpful assistant." }],
+            messages: [{ role: "system", content: "You are a helpful assistant." }, userMessage],
             model: "gpt-3.5-turbo",
             max_tokens: 512,
             temperature: 0,
@@ -39,7 +40,7 @@ router.post("/chat", async (req, res) => {
     }
 });
 
-module.exports = router;
+module.exports = router;*/
 
 
 
