@@ -90,3 +90,8 @@ nav li {
     margin-right: 30px;
 }
 
+p {
+    color: var(--brown);
+    z-index: 10;
+    padding: 10px;
+}

@@ -1,27 +1,34 @@
 import axios from 'axios';
-import { useState } from 'react';
-const ChatBox = ( { entry } ) => {
+import { useState, useEffect } from 'react';
+
+const ChatBox = ({entry}) => {
     const [response, setResponse] = useState("");
 
     const generateJournalPrompt = () => {
-        const prompt = "Generate me a journal prompt based on mental health";
+        const prompt = "Generate me a different journal prompt based on mental health in one sentence";
         handleClick(prompt);
     };
 
     const generateJournalTips = () => {
-        const prompt = "Generate me some journaling tips in less than 100 words";
+        const prompt = "Generate me some different journaling tips in less than 100 words";
         handleClick(prompt);
     };
 
     const handleClick = async(prompt) => {
-        const res = await axios.post("/chat", { prompt })
+        axios.post("http://localhost:4000/chat", { prompt })
         .then((res) => {
             setResponse(res.data);
+            console.log("API Response:", res.data);
         })
         .catch((err) => {
             console.error(err);
         })
     };
+
+    useEffect(() => {
+        console.log("Component Re-rendered with response:", response);
+    }, [response]);
+
     return (
         <div className="chat-box-outer">
             <div className="chat-options">
