@@ -8,6 +8,9 @@ const EggContext = createContext();
 export const EggProvider = ({ children }) => {
     const [selectedEgg, setEgg] = useState('');
     const [eggImg, setEggImg] = useState("");
+    if (!selectedEgg) {
+      setEgg('Jimmy');
+    }
     const handleClick = (egg) => {
         setEgg(egg);
     };
