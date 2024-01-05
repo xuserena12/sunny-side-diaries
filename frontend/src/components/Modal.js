@@ -2,6 +2,7 @@
 import { useState } from "react";
 import "./Modal.css";
 import axios from 'axios';
+import x from '../assets/images/x.png';
 
 const Modal = ({ toggleModal, content }) => {
   const id = localStorage.getItem('userId');
@@ -52,6 +53,7 @@ const Modal = ({ toggleModal, content }) => {
         </input>
         <div className="button-container">
             <button type="submit" onClick={submitEntry}>Done</button>
+            <div className="close" onClick={toggleModal}>x</div>
         </div>
         </div>
       </div>

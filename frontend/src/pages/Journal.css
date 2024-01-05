@@ -31,7 +31,7 @@
 }
 
  .outer-journal button {
-  background-color: #21c589; 
+  background-color: var(--green); 
   border: none;
   color: white;
   padding: 10px 20px;

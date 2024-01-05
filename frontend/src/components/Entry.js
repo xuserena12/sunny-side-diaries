@@ -30,9 +30,7 @@ const Entry = ({ date, title, content }) => {
         <div>
           <p className="content">{content}</p>
         </div>
-        <div className="button-container">
             <button className="analysis" onClick={handleClick}>See analysis</button>
-        </div>
         </div>
       </div>
       
