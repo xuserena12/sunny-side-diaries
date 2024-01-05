@@ -3,13 +3,14 @@ import tamagoPic from '../assets/images/tamago.png';
 import jimPic from '../assets/images/jimmy.png';
 import sunnyPic from '../assets/images/sunny.png';
 import { useEgg } from '../components/EggContext';
+
 const Egg = () => {
   const {selectedEgg, handleClick} = useEgg();
 
   return (
     <div className="pt-16 bg-chooseEgg bg-cover w-screen h-screen">
       <div className="oval">
-          <div className="EggText"> {selectedEgg !== '' ? selectedEgg+' Selected!': 'Choose Your Egg'}</div>
+          <div className="EggText"> {selectedEgg+' Selected!'}</div>
         </div>      
         <div className = {`tamago-container ${selectedEgg === 'Tamago' ? 'selected' : ''}`}>
           <div class="name">Tamago</div>

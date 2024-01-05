@@ -1,4 +1,5 @@
 @import url('../components/Navbar.css');
+@import url('./Journal.css');
 
 .background {
     height: 100vh;

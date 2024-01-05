@@ -3,27 +3,11 @@ import React, { useState, useEffect } from "react";
 import "./Journal.css";
 import Modal from "../components/Modal";
 import { useEgg } from '../components/EggContext';
-import sunnyPic from '../assets/images/ea_sunny.gif';
-import jimPic from '../assets/images/ea_jimmy.gif';
-import tamagoPic from '../assets/images/ea_tamago.gif';
 
 const Journal = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const [content, setContent] = useState("");
-  const {selectedEgg, handleClick} = useEgg();
-  const [eggImg, setEggImg] = useState("");
-  const chooseImg = () =>  {
-    if (selectedEgg === 'Tamago') {
-      setEggImg(tamagoPic);
-    } else if (selectedEgg === 'Sunny') {
-      setEggImg(sunnyPic);
-    } else if (selectedEgg === 'Jimmy') {
-      setEggImg(jimPic);
-    } else {
-      setEggImg('');
-    }
-    console.log(eggImg);
-  };
+  const { eggImg, chooseImg, selectedEgg } = useEgg();
 
   const toggleModal = () => {
     setModalVisible(!modalVisible);
@@ -40,8 +24,7 @@ const Journal = () => {
 
   useEffect(() => {
     chooseImg();
-  }, [selectedEgg]);
-
+  });
 
   return (
     <div className="bg-main bg-cover h-screen w-screen flex justify-center items-center">
@@ -59,7 +42,7 @@ const Journal = () => {
           {modalVisible && <Modal toggleModal={toggleModal} content={content} />}
         </div>
       </div>
-      <div className="egg-pic">
+      <div className={`egg-container ${selectedEgg}-style`}>
        {eggImg && <img className="egg" src={eggImg} alt="egg-img"></img>}
       </div>
     </div>
