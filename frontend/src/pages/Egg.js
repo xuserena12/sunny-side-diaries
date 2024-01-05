@@ -6,7 +6,9 @@ const Egg = () => {
   console.log('Rendering Egg component');
   return (
     <div className="pt-16 bg-chooseEgg bg-cover w-screen h-screen">
-      <div className="oval"></div>      
+      <div className="oval">
+          <div className="EggText">Choose Your Egg</div>
+        </div>      
         <div className = "tamago-container">
           <div class="name">Tamago</div>
           <img src={tamagoPic} alt="tamago"></img>
@@ -19,7 +21,6 @@ const Egg = () => {
           <div class="name">Jimmy</div>
           <img src={jimPic} alt="jim"></img>
         </div>
-        <div className="EggText">Choose Your Egg</div>
     </div>
   );
 }
