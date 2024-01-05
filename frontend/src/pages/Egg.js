@@ -2,7 +2,6 @@ import './Egg.css';
 import tamagoPic from '../assets/images/tamago.png';
 import jimPic from '../assets/images/jimmy.png';
 import sunnyPic from '../assets/images/sunny.png';
-import { useState } from 'react';
 import { useEgg } from '../components/EggContext';
 const Egg = () => {
   const {selectedEgg, handleClick} = useEgg();
@@ -29,3 +28,4 @@ const Egg = () => {
 }
 
 export default Egg;
+
