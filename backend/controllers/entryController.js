@@ -5,7 +5,6 @@ exports.entries_list = asyncHandler(async (req, res, next) => {
 
   try {
     const userId = req.query.userId;
-    console.log(userId);
     const allEntries = await Entry.find({ userId }, "title content date").sort({ date: -1 }).exec();
     res.status(201).json(allEntries);
   } catch (error) {

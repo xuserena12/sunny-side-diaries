@@ -18,6 +18,8 @@ const bcrypt = require("bcrypt");
 
 const jwt = require("jsonwebtoken");
 const JWT_SECRET = process.env.JWT_SECRET;
+const request = require('request');
+const axios = require('axios');
 
 
 // Set up mongoose connection
@@ -35,10 +37,6 @@ app.use((req, res, next) => {
   console.log(req.path, req.method);
   next();
 })
-
-app.listen(process.env.PORT, () => {
-  console.log("Listening on port", process.env.PORT);
-});
 
 require("./models/userDetails")
 const User=mongoose.model("UserInfo");
@@ -97,7 +95,7 @@ const openai = new OpenAI({
 app.use(bodyParser.json());
 
 
-
+// chat API
 app.post("/chat", async (req, res) => {
     try {
         const { prompt } = req.body;
@@ -124,3 +122,26 @@ app.post("/chat", async (req, res) => {
     }
 });
 
+// sentiment-analysis API
+app.get('/sentiment-analysis', function(req, res) {
+  const { text } = req.body;
+
+  // console.log(text);
+
+  axios.get("http://127.0.0.1:5000/flask", {
+    params: {
+      text: "sadness",
+    },
+    headers : {
+      'Content-Type': 'application/json',
+    }
+  }).then(response => {
+    console.log(response.data);
+  }).catch(error => {
+    console.log(error);
+  })
+});
+
+app.listen(process.env.PORT, () => {
+  console.log("Listening on port", process.env.PORT);
+});

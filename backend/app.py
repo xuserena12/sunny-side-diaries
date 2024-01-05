@@ -1,19 +1,21 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from transformers import pipeline
 
 app = Flask(__name__)
 
-@app.route('/emotion_polarities')
+@app.route('/flask', methods=['GET'])
 
-def analyze_emotions():
-    text = request.args.get('text')
+def get_emotion_polarities():
+   text = request.args.get('text')
+    
+   print(text)
 
-    if text:
-        emotion_polarities = process_emotions(text)
-        return jsonify(emotion_polarities)
-    else:
-        return jsonify({'error': 'Text parameter is missing'}), 400
-
+   if text:
+      emotion_polarities = process_emotions(text)
+      return jsonify(emotion_polarities)
+   else:
+      return jsonify({'error': 'Text parameter is missing'}), 400
 
 
 def process_emotions(text):
@@ -55,4 +57,4 @@ def process_emotions(text):
     
 
 if __name__ == "__main__":
-   app.run(debug=True)
+   app.run(port=5000, debug=True)

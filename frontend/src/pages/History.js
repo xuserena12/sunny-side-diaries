@@ -9,7 +9,7 @@ const History = () => {
   const userId = localStorage.getItem('userId');
 
   useEffect(() => {
-    console.log("hi!");
+    // console.log("hi!");
     // console.log(userId);
     const fetchData = async () => {
       try {
