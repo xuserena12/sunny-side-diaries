@@ -60,9 +60,9 @@ h2 {
 .close {
     font-size: 30px;
     color: var(--brown);
-    top: 0;
     position: absolute;
     right: 5%;
+    top: 2px;
 }
 
 .close:hover {

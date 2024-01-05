@@ -100,20 +100,17 @@
     filter: brightness(100%);
   }
 
-  .tamago-container:hover .name{
-    animation: fadeIn 3s;
+  .tamago-container:hover .name,
+  .sunny-container:hover .name,
+  .jimmy-container:hover .name {
     display: block;
-    text-shadow: 4px -4px 2px rgb(0,0,0,0.3);
+    animation: fadeIn 3s;
+    text-shadow: 4px -4px 2px rgba(0, 0, 0, 0.3);
   }
 
-  .sunny-container:hover .name{
-    animation: fadeIn 3s;
-    display: block;
-    text-shadow: 4px -4px 2px rgb(0,0,0,0.3);
-  }
 
-  .jimmy-container:hover .name{
-    animation: fadeIn 0.1s;
-    display: block;
-    text-shadow: 4px -4px 2px rgb(0,0,0,0.3);
-  }
+  .tamago-container.selected,
+.sunny-container.selected,
+.jimmy-container.selected {
+  filter: brightness(100%);
+}

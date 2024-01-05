@@ -7,6 +7,7 @@ import Egg from './pages/Egg';
 import Signup from './pages/Signup';
 import Signin from './pages/Signin';
 import EmotionAnalysis from './pages/EmotionAnalysis';
+import { EggProvider } from '../src/components/EggContext'
 
 function App() {
   const location = useLocation();
@@ -17,6 +18,7 @@ function App() {
   const shouldDisplayNavbar = navbarRoutes.includes(location.pathname);
 
   return (
+    <EggProvider>
     <div className="App">
       {shouldDisplayNavbar && <Navbar />}
       <Routes>
@@ -29,6 +31,7 @@ function App() {
         <Route path="/emotion-analysis" element={<EmotionAnalysis/>} />
       </Routes>
     </div>
+    </EggProvider>
   );
 }
 

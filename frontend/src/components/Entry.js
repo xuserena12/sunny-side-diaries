@@ -34,7 +34,17 @@ const Entry = ({ date, title, content }) => {
           <p className="content">{content}</p>
         </div>
         <div className="button-container">
-            <button className="analysis" onClick={handleClick}>See analysis</button>
+            <button className="analysis" onClick={handleClick}>
+            {/* <Link
+              to={{
+                pathname: '/emotion-analysis',
+                state: { content: "hi" }, // Ensure you're passing the state properly here
+              }}
+            > */}
+              {/* See Emotion Analysis
+            </Link> */}
+            See Emotion Analysis
+            </button>
         </div>
         </div>
       </div>
