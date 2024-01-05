@@ -1,7 +1,13 @@
 import './EmotionAnalysis.css';
 import ChatBox from "../components/ChatBox";
-import '../components/Navbar.css'
+import '../components/Navbar.css';
+import { useLocation } from 'react-router-dom';
+
 const EmotionAnalysis = () => {
+    const location = useLocation();
+    console.log(location.state);
+    const content = location.state;
+
     return (
         <div className="bg-main background">
             <nav>
@@ -12,7 +18,7 @@ const EmotionAnalysis = () => {
             </nav>
             <h1>Emotion Analysis</h1>
             <div className="chat-box">
-                <ChatBox></ChatBox>
+                <ChatBox entry={content}></ChatBox>
             </div>
             <div className="emotions-graph">
             </div> {/*pie chart goes here*/}

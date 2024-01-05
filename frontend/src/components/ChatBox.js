@@ -14,8 +14,14 @@ const ChatBox = ({entry}) => {
         handleClick(prompt);
     };
 
+    const journalResponse = () => {
+        console.log(entry);
+        const prompt = "Can you provide a reassuring response to the following journal entry?" + entry;
+        handleClick(prompt);
+    }
+
     const handleClick = async(prompt) => {
-        axios.post("http://localhost:4000/chat", { prompt })
+        axios.post("/chat", { prompt })
         .then((res) => {
             setResponse(res.data);
             console.log("API Response:", res.data);
@@ -26,8 +32,8 @@ const ChatBox = ({entry}) => {
     };
 
     useEffect(() => {
-        console.log("Component Re-rendered with response:", response);
-    }, [response]);
+        journalResponse();
+    }, []);
 
     return (
         <div className="chat-box-outer">
@@ -36,7 +42,7 @@ const ChatBox = ({entry}) => {
                 <button className="journal-tip" onClick={generateJournalTips}>Journaling Tips</button>
             </div>
             <div className="chat-box-inner">
-                <p>{ response }</p>
+                <p>{ response.replaceAll("\"", "") }</p>
             </div>
         </div>
     )

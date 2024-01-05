@@ -1,8 +1,10 @@
 import './Entry.css';
-import { Navigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Entry = ({ date, title, content }) => {
-  
+  const navigate = useNavigate();
+
   const yourDate = new Date(date);
   const monthNames = [
     'Jan.', 'Feb.', 'Mar.', 'Apr.', 'May', 'Jun.', 'Jul.', 'Aug.', 'Sep.', 'Oct.', 'Nov.', 'Dec.'
@@ -12,9 +14,10 @@ const Entry = ({ date, title, content }) => {
     day: yourDate.getDate(),
     year: yourDate.getFullYear()
   }
+  // const data = { name: 'John', age: 30 };
 
   const handleClick = (e) => {
-
+    navigate('/emotion-analysis', { state: content });
   }
 
   return (
@@ -31,7 +34,17 @@ const Entry = ({ date, title, content }) => {
           <p className="content">{content}</p>
         </div>
         <div className="button-container">
-            <button className="analysis" onClick={handleClick}>See analysis</button>
+            <button className="analysis" onClick={handleClick}>
+            {/* <Link
+              to={{
+                pathname: '/emotion-analysis',
+                state: { content: "hi" }, // Ensure you're passing the state properly here
+              }}
+            > */}
+              {/* See Emotion Analysis
+            </Link> */}
+            See Emotion Analysis
+            </button>
         </div>
         </div>
       </div>
