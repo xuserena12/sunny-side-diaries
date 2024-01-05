@@ -1,5 +1,5 @@
 import './Entry.css';
-
+import { Navigate } from 'react-router-dom';
 
 const Entry = ({ date, title, content }) => {
   
@@ -13,6 +13,10 @@ const Entry = ({ date, title, content }) => {
     year: yourDate.getFullYear()
   }
 
+  const handleClick = (e) => {
+
+  }
+
   return (
     <div className="outer-entry">
       <div
@@ -23,12 +27,15 @@ const Entry = ({ date, title, content }) => {
             <div className="month">{dateFiltered.month}</div>
             <div className="day">{dateFiltered.day}</div>
           </div>
-
         <div>
           <p className="content">{content}</p>
         </div>
+        <div className="button-container">
+            <button className="analysis" onClick={handleClick}>See analysis</button>
+        </div>
         </div>
       </div>
+      
     </div>
   );
 }

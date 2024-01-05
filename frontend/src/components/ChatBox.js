@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useState } from 'react';
-const ChatBox = () => {
+const ChatBox = ( { entry } ) => {
     const [response, setResponse] = useState("");
 
     const generateJournalPrompt = () => {

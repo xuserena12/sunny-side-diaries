@@ -23,6 +23,7 @@
 
 .display {
   display: flex;
+  position: relative;
 }
 
 .date {
@@ -53,3 +54,16 @@
   margin-top: 12px;
   color: #545556;
 }
+
+
+.button-container {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 12px;
+}
+
+.analysis {
+  /* background-color: #716e6e; */
+}
+
