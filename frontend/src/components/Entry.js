@@ -33,7 +33,6 @@ const Entry = ({ date, title, content }) => {
         <div>
           <p className="content">{content}</p>
         </div>
-        <div className="button-container">
             <button className="analysis" onClick={handleClick}>
             {/* <Link
               to={{
@@ -43,9 +42,8 @@ const Entry = ({ date, title, content }) => {
             > */}
               {/* See Emotion Analysis
             </Link> */}
-            See Emotion Analysis
+            Emotion Analysis
             </button>
-        </div>
         </div>
       </div>
       
