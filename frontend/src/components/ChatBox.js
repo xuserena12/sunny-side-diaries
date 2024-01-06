@@ -18,7 +18,8 @@ const ChatBox = ({ entry }) => {
         console.log(entry);
         const prompt = "Can you provide a reassuring response to the following journal entry?" + entry;
         handleClick(prompt);
-    }
+    };
+
 
     const handleClick = async(prompt) => {
         axios.post("/chat", { prompt })
@@ -32,7 +33,7 @@ const ChatBox = ({ entry }) => {
     };
 
     useEffect(() => {
-        journalResponse();
+        // journalResponse();
     }, []);
 
     return (
@@ -45,7 +46,7 @@ const ChatBox = ({ entry }) => {
                 <p>{ response.replaceAll("\"", "") }</p>
             </div>
         </div>
-    )
+    );
 }
 
 export default ChatBox;

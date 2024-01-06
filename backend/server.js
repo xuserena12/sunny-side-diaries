@@ -122,25 +122,29 @@ app.post("/chat", async (req, res) => {
     }
 });
 
-// sentiment-analysis API
-app.get('/sentiment-analysis', function(req, res) {
+// sentiment-analysis from flask
+app.post('/sentiment-analysis', function(req, res) {
   const { text } = req.body;
-
+  console.log(text);
   // console.log(text);
 
-  axios.get("http://127.0.0.1:5000/flask", {
-    params: {
-      text: "sadness",
-    },
+  axios.post("http://127.0.0.1:5000/sentiment-analysis", {
+    text: text,
     headers : {
       'Content-Type': 'application/json',
     }
   }).then(response => {
+    console.log("data below");
     console.log(response.data);
+    res.send(response.data);
   }).catch(error => {
     console.log(error);
+    res.status(500).send("Internal server error");
   })
+  // res.send("hello!")
+  // res.send("hello worlddd");
 });
+
 
 app.listen(process.env.PORT, () => {
   console.log("Listening on port", process.env.PORT);

@@ -4,16 +4,19 @@ from transformers import pipeline
 
 app = Flask(__name__)
 
-@app.route('/flask', methods=['GET'])
+@app.route('/sentiment-analysis', methods=["POST"])
 
 def get_emotion_polarities():
-   text = request.args.get('text')
+   data = request.json
+   text = data.get('text')
+   # text = request.args.get('text')
+   # text = "sadness"
     
    print(text)
 
    if text:
       emotion_polarities = process_emotions(text)
-      return jsonify(emotion_polarities)
+      return jsonify(emotion_polarities), 201
    else:
       return jsonify({'error': 'Text parameter is missing'}), 400
 

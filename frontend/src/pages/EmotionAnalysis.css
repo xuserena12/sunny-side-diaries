@@ -23,7 +23,7 @@ h1 {
 .chat-box-outer {
     background-color: var(--mellow);
     display: inline-block;
-    width: 50%;
+    width: 80%;
     height: 500px;
     border-radius: 25px;
     position: relative;
@@ -95,4 +95,29 @@ p {
     color: var(--brown);
     z-index: 10;
     padding: 10px;
+}
+
+.emotion-analysis-container {
+    display: grid;
+    grid-template-columns: 12fr 1fr;
+    gap: 0px;
+}
+
+.emotions-graph {
+    flex: 1;
+    margin-left:20px;
+    background-color: var(--cream);
+    margin-right: 120px;
+    margin-top: 50px;
+    border-radius: 13px;
+    border: 3px solid var(--brown);
+}
+
+.pie-chart {
+    margin-right: 10px;
+    margin-top: 30px;
+}
+
+.emotion-chart {
+    margin-left: 16px;
 }
