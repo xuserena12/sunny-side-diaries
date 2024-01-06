@@ -33,7 +33,7 @@ const ChatBox = ({ entry }) => {
     };
 
     useEffect(() => {
-        // journalResponse();
+        journalResponse();
     }, []);
 
     return (

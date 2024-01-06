@@ -28,7 +28,7 @@ const EmotionAnalysis = () => {
     const { eggImg, chooseImg, selectedEgg } = useEgg();
 
     const [sentiments, setSentiments] = useState(null);
-    const [showChart, setShowChart] = useState(true);
+    const [showChart, setShowChart] = useState(false);
 
     let initialData = {
         labels: [
