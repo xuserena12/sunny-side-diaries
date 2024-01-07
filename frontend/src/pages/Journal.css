@@ -71,8 +71,8 @@ textarea[disabled] {
   width: 25%;
   z-index: 3;
   position: absolute;
-  left: 3%;
-  bottom: 25%;
+  left: 0;
+  bottom: 15%;
   transform: scaleX(-1);
 }
 
@@ -81,8 +81,8 @@ textarea[disabled] {
   width: 21%;
   z-index: 3;
   position: absolute;
-  left: 3%;
-  bottom: 20%;
+  left: 0;
+  bottom: 15%;
 }
 
 .Jimmy-style {
@@ -90,6 +90,6 @@ textarea[disabled] {
   width: 20%;
   z-index: 3;
   position: absolute;
-  left: 3%;
-  bottom: 20%;
+  left: 0;
+  bottom: 15%;
 }

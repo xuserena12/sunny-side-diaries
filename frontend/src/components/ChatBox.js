@@ -1,8 +1,10 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import { useEgg } from './EggContext';
 
 const ChatBox = ({ entry }) => {
     const [response, setResponse] = useState("");
+    const { backstory, handleBackstory } = useEgg();
 
     const generateJournalPrompt = () => {
         const prompt = "Generate me a different journal prompt based on mental health in one sentence";
@@ -16,10 +18,14 @@ const ChatBox = ({ entry }) => {
 
     const journalResponse = () => {
         console.log(entry);
-        const prompt = "Can you provide a reassuring response to the following journal entry?" + entry;
+        const prompt = entry;
         handleClick(prompt);
-    };
-
+    }
+    
+    const generateAskEgg = async() => {
+        await handleBackstory();
+        setResponse(backstory);
+    }
 
     const handleClick = async(prompt) => {
         axios.post("/chat", { prompt })
@@ -39,6 +45,7 @@ const ChatBox = ({ entry }) => {
     return (
         <div className="chat-box-outer">
             <div className="chat-options">
+            <button className="ask-egg" onClick={generateAskEgg}>Ask the Egg</button>
                 <button className="journal-prompt" onClick={generateJournalPrompt}>Generate a Journal Prompt</button>
                 <button className="journal-tip" onClick={generateJournalTips}>Journaling Tips</button>
             </div>

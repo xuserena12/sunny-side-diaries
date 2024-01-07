@@ -1,6 +1,6 @@
 import './Entry.css';
-import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import { useEgg } from './EggContext';
 
 const Entry = ({ date, title, content }) => {
   const navigate = useNavigate();
@@ -15,9 +15,11 @@ const Entry = ({ date, title, content }) => {
     year: yourDate.getFullYear()
   }
   // const data = { name: 'John', age: 30 };
-
+  const { handlePersonality, personality } = useEgg();
   const handleClick = (e) => {
-    navigate('/emotion-analysis', { state: content });
+    handlePersonality();
+    let aiRequest = "Here is a journal entry: " + content + ". Respond to this entry with this personality in less than 250 words: "+ personality;
+    navigate('/emotion-analysis', { state: aiRequest});
   }
 
   return (

@@ -1,5 +1,6 @@
 import './EmotionAnalysis.css';
 import ChatBox from "../components/ChatBox";
+import Resources from "../components/Resources"
 import '../components/Navbar.css';
 import { useLocation, Link } from 'react-router-dom';
 import { useEgg } from '../components/EggContext';
@@ -103,7 +104,6 @@ const EmotionAnalysis = () => {
             <nav>
                 <ul>
                     <li><Link to="/history" className="navbar-link">Back</Link></li>
-                    <li><button className="navbar-link">Ask the Egg</button></li>
                 </ul>
             </nav>
             <h1>Emotion Analysis</h1>
@@ -121,7 +121,7 @@ const EmotionAnalysis = () => {
                 </div> {/*pie chart goes here*/}
             </div>
             <div className="resources">
-                {/*<Resources></Resources>*/}
+                <Resources></Resources>
             </div>
             <div className={`egg-container ${selectedEgg}-style`}>
             {eggImg && <img className="egg" src={eggImg} alt="egg-img"></img>}
@@ -131,3 +131,4 @@ const EmotionAnalysis = () => {
 }
 
 export default EmotionAnalysis;
+
