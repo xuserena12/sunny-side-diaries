@@ -10,8 +10,6 @@
 
 A digital journal that uses sentiment analysis to provide personalized insights into your emotions and experiences. Features some pretty cute and interactive egg characters!
 
-Built with React, Express, MongoDB, Flask, and OpenAI’s GPT-3.5
-
 ## Setup and Installation
 
 1. Clone this repository
