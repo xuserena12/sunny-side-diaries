@@ -16,13 +16,10 @@ A digital journal that uses sentiment analysis to provide personalized insights 
    `git clone https://github.com/xuserena12/sunny-side-diaries.git`
 2. `cd your-repository`
 ### Frontend
-3.
-   ```bash
-   cd frontend
-   cd source
-   npm i
-   npm start
-   ```
+3. `cd frontend`
+4. `cd src`
+5. `npm i`
+6. `npm start`
 ### Backend
 5. Create an env file with your OpenAI Api key
    To get API key click here [here](https://platform.openai.com/api-keys)
@@ -35,7 +32,7 @@ Enjoy :D
 
 
 ## Built With
-React - frontend
-Node.js and Flask API - backend
-OpenAI (GPT-3.5) - API
-MongoDB - database
+React - frontend  
+Node.js and Flask API - backend  
+OpenAI (GPT-3.5) - API  
+MongoDB - database  
