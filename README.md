@@ -19,10 +19,10 @@ Built with React, Express, MongoDB, Flask, and OpenAI’s GPT-3.5
 2. `cd your-repository`
 ### Frontend
 3.
-   `cd frontend`
-   `cd source`
-   `npm i`
-   `npm start`
+   `cd frontend
+   cd source
+   npm i
+   npm start`
 ### Backend
 5. Create an env file with your OpenAI Api key
    To get API key click here [here](https://platform.openai.com/api-keys)
