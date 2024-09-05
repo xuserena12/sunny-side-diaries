@@ -17,10 +17,25 @@ Built with React, Express, MongoDB, Flask, and OpenAI’s GPT-3.5
 1. Clone this repository
    `git clone https://github.com/xuserena12/sunny-side-diaries.git`
 2. `cd your-repository`
-3. For frontend
+### Frontend
+3.
    `cd frontend`
    `cd source`
    `npm i`
    `npm start`
-4. For backend
-   
+### Backend
+5. Create an env file with your OpenAI Api key
+   To get API key click here [here](https://platform.openai.com/api-keys)
+  `API_KEY=your_openai_api_key_here
+6. `npm install`
+7. Ensure .env is in the .gitignore file
+8. `npm run dev`
+
+Enjoy :D
+
+
+## Built With
+React - frontend
+Node.js and Flask API - backend
+OpenAI (GPT-3.5) - API
+MongoDB - database
