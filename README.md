@@ -18,11 +18,11 @@ A digital journal that uses sentiment analysis to provide personalized insights 
 ### Frontend
 3. `cd frontend`
 4. `cd src`
-5. `npm i`
+5. `npm install`
 6. `npm start`
 ### Backend
 5. Create a .env file with your OpenAI API key
-6. To get API key click [here](https://platform.openai.com/api-keys)
+6. To get API key click [here](https://platform.openai.com/api-keys) and put the following into the .env file:
   `API_KEY=your_openai_api_key_here`
 7. `npm install`
 8. Ensure .env is in the .gitignore file
